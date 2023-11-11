@@ -17,6 +17,10 @@ app.use(cors({
 
 connectToDB();
 
+app.get('/',(req, res)=>{
+    res.status(200).json({Message : 'Working'})
+})
+
 app.get('/api/home',async (req,res)=>{
     const query = req.query.q ;
     const id = shortid.generate();
