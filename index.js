@@ -21,7 +21,7 @@ app.get('/',async (req,res)=>{
     try
     {const result = await collection.insertOne(data);
         console.log(result.insertedId);
-        res.status(200).json({Message : `http://localhost:8000/${id}`});
+        res.status(200).json({Message : `https://url-shortener-backend-tau.vercel.app/${id}`});
     }catch(error){
         console.log('error occured while storing the data ' ,error)
         res.json({Message:`error occured while storing the data ${error}`})
