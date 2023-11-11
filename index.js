@@ -9,7 +9,9 @@ const db = client.db('UrlShortener');
 const collection = db.collection('URL')
 var count = 0;
 app.use(cors({
-    origin: 'https://peppy-marshmallow-a78fb7.netlify.app',
+    origin: ['https://peppy-marshmallow-a78fb7.netlify.app',
+                'https://main--peppy-marshmallow-a78fb7.netlify.app/'
+],
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 
