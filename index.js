@@ -12,7 +12,7 @@ app.use(cors());
 
 connectToDB();
 
-app.get('/',async (req,res)=>{
+app.get('/api/home',async (req,res)=>{
     const query = req.query.q ;
     const id = shortid.generate();
     console.log('calling')
@@ -21,7 +21,7 @@ app.get('/',async (req,res)=>{
     try
     {const result = await collection.insertOne(data);
         console.log(result.insertedId);
-        res.status(200).json({Message : `https://url-shortener-backend-tau.vercel.app/${id}`});
+        res.status(200).json({Message : `https://url-shortener-backend-tau.vercel.app/api/${id}`});
     }catch(error){
         console.log('error occured while storing the data ' ,error)
         res.json({Message:`error occured while storing the data ${error}`})
@@ -32,7 +32,7 @@ app.get('/favicon.ico', (req, res) => {
     res.status(204);  // No content for favicon request
 });
 
-app.get('/:id',async (req,res)=>{
+app.get('/api/:id',async (req,res)=>{
     console.log('called once - ', count++);
     const id = req.params.id;
     
