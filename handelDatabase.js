@@ -1,7 +1,8 @@
-const {MongoClient} = require('mongodb')
-const uri = `mongodb+srv://shashankg361:6Z3dWMNtJ5NoDMf8@cluster0.lqkjzg4.mongodb.net/`
-const client = new MongoClient(uri ,{ useNewUrlParser: true, useUnifiedTopology: true })
 require('dotenv').config();
+const {MongoClient} = require('mongodb')
+const uri = `mongodb+srv://shashankg361:${process.env.PASSWORD}@cluster0.lqkjzg4.mongodb.net/`
+const client = new MongoClient(uri ,{ useNewUrlParser: true, useUnifiedTopology: true })
+
 
 
 const  connectToDB = async()=>{
