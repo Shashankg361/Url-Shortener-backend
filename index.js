@@ -8,7 +8,10 @@ const port = 8000;
 const db = client.db('UrlShortener');
 const collection = db.collection('URL')
 var count = 0;
-app.use(cors());
+app.use(cors({
+    origin: 'https://main--peppy-marshmallow-a78fb7.netlify.app',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+}));
 
 connectToDB();
 
