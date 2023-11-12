@@ -9,9 +9,7 @@ const db = client.db('UrlShortener');
 const collection = db.collection('URL')
 var count = 0;
 app.use(cors({
-    origin: ['https://urlshortener13.netlify.app/',
-                'https://main--urlshortener13.netlify.app/'
-],
+    origin: '*',
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 
@@ -22,9 +20,11 @@ app.get('/',(req, res)=>{
 })
 
 app.get('/api/home',async (req,res)=>{
+
+    console.log('calling')
     const query = req.query.q ;
     const id = shortid.generate();
-    console.log('calling')
+    
 
     const data = {Id:id , Url : query};
     try
