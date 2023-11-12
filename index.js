@@ -30,7 +30,7 @@ app.get('/api/home',async (req,res)=>{
     try
     {const result = await collection.insertOne(data);
         console.log(result.insertedId);
-        res.status(200).json({Message : `https://url-shortener-backend-production-35fd.up.railway.app/${id}`});
+        res.status(200).json({Message : `https://url-shortener-backend-production-35fd.up.railway.app/api/${id}`});
     }catch(error){
         console.log('error occured while storing the data ' ,error)
         res.json({Message:`error occured while storing the data ${error}`})
